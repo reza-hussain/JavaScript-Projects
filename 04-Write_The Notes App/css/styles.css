@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+
+:root {
+  --myblue: #0cd4fa;
+  --myorange: #faca79;
+  --myred: #fb9c75;
+  --mypurple: #b797f5;
+  --mygreen: #e4ed92;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+html {
+  background-color: #101010;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+input {
+  outline: none;
+  border: none;
+  background-color: inherit;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  border: none;
+}
+
+.container {
+  padding: 10%;
+}
+
+.header_and_add {
+  display: flex;
+  flex-direction: column;
+}
+
+/*---------------------Modal Region--------------------------*/
+.modal {
+  position: fixed;
+  display: block;
+}
+
+.modal-header {
+  padding: 20px;
+  border: none;
+  filter: drop-shadow(0px 0.5px 5px rgba(16, 16, 16, 0.1));
+  background-color: var(--myred);
+  z-index: 1;
+}
+
+.modal-header > h2 {
+  font-weight: 500;
+}
+
+.modal .modal-body {
+  background-color: inherit;
+  height: 70vh;
+  padding: 20px;
+  border: none;
+}
+.modal-bottom {
+  width: 60vw;
+  height: 8vh;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  border-radius: 50px 50px 50px 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modal-icons {
+  width: inherit;
+  height: inherit;
+  background-color: var(--myred);
+  color: #fafafa;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 1;
+  transition: all 0.4s linear;
+}
+
+.color-buttons-modal {
+  width: inherit;
+  height: inherit;
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  opacity: 1;
+  z-index: 1;
+  transition: all 0.4s linear;
+}
+.color-buttons-modal button {
+  margin: 0 15px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visuallyhidden {
+  opacity: 0;
+}
+/*---------------- -----Header Region--------------------------*/
+.header {
+  text-align: center;
+}
+
+.logo {
+  font-size: 50px;
+  margin: 0%;
+}
+/*--------------------Search/Filter Bar------------------------*/
+.search {
+  display: flex;
+  justify-content: center;
+}
+
+.filter {
+  width: 60vw;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: #f7f8f2;
+  padding: 10px;
+}
+/*---------------------Add Button Region--------------------------*/
+
+.addNote {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#red {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--myred);
+  margin-top: 10px;
+  transition: all 0.5s ease-in linear;
+}
+
+#blue {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--myblue);
+  transition: all 0.5s ease-in linear;
+}
+
+#green {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--mygreen);
+  transition: all 0.5s ease-in linear;
+}
+
+#orange {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--myorange);
+  transition: all 0.5s ease-in linear;
+}
+
+#purple {
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: var(--mypurple);
+  transition: all 0.5s ease-in linear;
+}
+
+/*---------------------Notes Region--------------------------*/
+.notes-content {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+.note {
+  width: 60vw;
+  height: auto;
+  word-wrap: break-word;
+  background-color: var(--myorange);
+  padding: 8%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.note-date {
+  margin-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*---------------------Footer Region--------------------------*/
+footer {
+  background-color: #101010;
+  text-align: center;
+  font-size: 15px;
+  color: #fafafa;
+  padding: 10px;
+  height: 20vh;
+}
+
+.author {
+  margin-top: 5px;
+}
+
+.social-icons {
+  height: 100px;
+  text-align: center;
+}
+
+.fa {
+  margin: 0px 10px 0px 10px;
+  font-size: 20px;
+  color: #fafafa;
+  height: inherit;
+  padding-bottom: 0;
+}
+
+/*-------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+----------------------------------MEDIUM DEVICE WIDTH----------------------------------------------
+---------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 700px) {
+  .modal .modal-body {
+    height: 70vh;
+  }
+
+  .header {
+    text-align: left;
+    width: 100vw;
+    padding: 10% 3%;
+  }
+
+  .logo {
+    font-size: 50px;
+    margin: 0%;
+  }
+
+  body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .notes-content {
+    min-height: auto;
+  }
+
+  .addNote {
+    display: flex;
+    text-align: left;
+    align-items: center;
+    padding: 0;
+    padding: 0 3%;
+  }
+
+  .addButton {
+    width: 40px;
+    height: 40px;
+    background-color: #101010;
+    color: #fafafa;
+    border-radius: 40px;
+    margin: 0 0 0 0;
+  }
+
+  .color-buttons {
+    margin: 0;
+    margin-left: 4px;
+  }
+
+  .notes-content {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 3%;
+  }
+
+  .note {
+    width: 25vw;
+    height: auto;
+    word-wrap: break-word;
+    background-color: var(--myorange);
+    padding: 5%;
+    border-radius: 10px;
+    margin: 5% 0 0 0;
+    margin-bottom: 20px;
+  }
+
+  .note-content {
+    overflow: hidden;
+    height: 50px;
+  }
+
+  .note-date {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/*-------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+----------------------------------DESKTOP DEVICE WIDTH---------------------------------------------
+---------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------*/
+
+@media screen and (min-width: 1000px) {
+  .modal .modal-body {
+    height: 70vh;
+  }
+  .modal-bottom {
+    width: 20vw;
+  }
+
+  #modal-color-picker {
+    flex-direction: row;
+  }
+  .color-buttons-modal button {
+    margin: 0 15px;
+  }
+
+  /*-------------HEADER REGION----------*/
+
+  .header_and_add {
+    flex-direction: column-reverse;
+  }
+  .header {
+    text-align: left;
+    width: 100vw;
+    padding: 5% 3%;
+  }
+
+  .logo {
+    font-size: 50px;
+    margin: 0%;
+  }
+
+  body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .notes-content {
+    min-height: auto;
+  }
+
+  .addNote {
+    padding: 0;
+    flex-direction: column;
+    height: 100%;
+    width: 100px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+  }
+
+  .dropdown {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+    height: 300px;
+    margin-top: 80px;
+  }
+
+  .addButton {
+    width: 40px;
+    height: 40px;
+    background-color: inherit;
+    background-color: #101010;
+    color: #fafafa;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .color-buttons {
+    display: block;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .color-select {
+    margin: 5px 9px;
+  }
+
+  .colors {
+    overflow-y: hidden;
+    max-height: 500px;
+    transition-property: all;
+    transition-duration: 0.6s;
+  }
+
+  .color-dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #fafafa;
+  }
+
+  .closed {
+    max-height: 0;
+  }
+
+  .notes-content {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .note {
+    width: 15vw;
+    height: auto;
+    word-wrap: break-word;
+    background-color: var(--myorange);
+    padding: 2%;
+    margin: 5% 0 0 0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .note-content {
+    overflow: hidden;
+    height: 50px;
+  }
+
+  .note-date {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+}

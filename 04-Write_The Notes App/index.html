@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="modal hidden fade" id="modal-box">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="title-input"><input type="text" placeholder="Enter Title Here"></h3>
+          </div>
+          <div class="modal-body">
+            <textarea type="text"placeholder="Enter Content Here...."></textarea>
+          </div>
+
+          <div class="modal-bottom">
+            <div class="color-buttons color-buttons-modal visuallyhidden" id="modal-color-picker">
+              <button class="select-color red" type="button"></button>
+              <button class="select-color blue" type="button"></button>
+              <button class="select-color orange" type="button"></button>
+              <button class="select-color green" type="button"></button>
+              <button class="select-color purple" type="button"></button>
+            </div>
+            <div class="modal-icons" id="modal-icons">
+              <i class="material-icons close-btn" type="button">close</i>
+              <i class="material-icons btn-color" id="select-color" type="button">format_paint</i>
+              <i class="material-icons btn-done" type="button">done</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header_and_add">
+      <div class="header container">
+          <h3 class="logo">Write.</h3>
+          <i class = "sub-logo">A place for anonymous notes</i>
+      </div>
+
+      <div class="addNote container">
+        <div class="dropdown" type="button">
+          <div class="material-icons addButton" id="add-button" type="button">add</div>
+          <div class="colors closed" type="button">
+            <div class="color-dropdown">
+            <button class="color-select color-select-0 red" id="red" type="button" data-toggle="modal" data-target="#modal-box"></button>
+            <button class="color-select color-select-1 blue " id="blue" type="button" data-toggle="modal" data-target="#modal-box"></button>
+            <button class="color-select color-select-2 orange " id="orange" type="button" data-toggle="modal" data-target="#modal-box"></button>
+            <button class="color-select color-select-3 green " id="green" type="button" data-toggle="modal" data-target="#modal-box"></button>
+            <button class="color-select color-select-4 purple " id="purple" type="button" data-toggle="modal" data-target="#modal-box"></button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+
+    </div>
+    <div class="search">
+      <input type="text" class="filter" placeholder="Filter Notes...">
+    </div>
+
+      <div class="row notes-content container">
+          <div class="note col-xs-8 col-md-3 col-xl-6">
+              <h3 class="note-title">Note Title</h3>
+              <p class="note-content"> Here goes the content.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+              <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+          </div>
+
+          <div class="note col-xs-8 col-md-3 col-xl-6">
+            <h3 class="note-title">Note Title</h3>
+            <p class="note-content"> Here goes the content.. gihgghughughughughrgughughughrughughrguhgruhgrgh.</p>
+            <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+        </div>
+
+        <div class="note col-xs-8 col-md-3 col-xl-6">
+          <h3 class="note-title">Note Title</h3>
+          <p class="note-content"> Here goes the content.. gihgghughughughughrgughughughrughughrguhgruhgrgh.</p>
+          <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+        </div>
+
+        <div class="note col-xs-8 col-md-3 col-xl-6">
+          <h3 class="note-title">Note Title</h3>
+          <p class="note-content"> Here goes the content.. gihgghughughughughrgughughughrughughrguhgruhgrgh.</p>
+          <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+        </div>
+
+        <div class="note col-xs-8 col-md-3 col-xl-6">
+          <h3 class="note-title">Note Title</h3>
+          <p class="note-content"> Here goes the content.. gihgghughughughughrgughughughrughughrguhgruhgrgh.</p>
+          <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+        </div>
+        
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="/script.js"></script>
+  </body>
+  <footer>
+    <p class="author"><i>Developed by Reza Hussain</i></p>
+    <div class="social-icons">
+      <i class="fa fa-github" aria-hidden="true"></i>
+      <i class="fa fa-instagram" aria-hidden="true"></i>
+      <i class="fa fa-linkedin" aria-hidden="true"></i>
+    </div>
+  </footer>
+</html>
