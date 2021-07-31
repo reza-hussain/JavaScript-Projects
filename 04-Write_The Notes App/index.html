@@ -16,23 +16,21 @@
     <div class="modal hidden fade" id="modal-box">
       <div class="modal-dialog">
         <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="title-input"><input type="text" placeholder="Enter Title Here"></h3>
-          </div>
+          <span class="modal-header" contenteditable="true" class="text-box"></span>
           <div class="modal-body">
-            <textarea type="text"placeholder="Enter Content Here...."></textarea>
+            <textarea type="text" placeholder="Enter Content Here...."></textarea>
           </div>
 
           <div class="modal-bottom">
             <div class="color-buttons color-buttons-modal visuallyhidden" id="modal-color-picker">
-              <button class="select-color red" type="button"></button>
-              <button class="select-color blue" type="button"></button>
-              <button class="select-color orange" type="button"></button>
-              <button class="select-color green" type="button"></button>
-              <button class="select-color purple" type="button"></button>
+              <button class="select-color red" id="red" type="button"></button>
+              <button class="select-color blue" id="blue" type="button"></button>
+              <button class="select-color orange"id="orange" type="button"></button>
+              <button class="select-color green" id="green" type="button"></button>
+              <button class="select-color purple" id="purple" type="button"></button>
             </div>
-            <div class="modal-icons" id="modal-icons">
-              <i class="material-icons close-btn" type="button">close</i>
+            <div class="modal-icons" id="modalIcons">
+              <i class="material-icons close-btn" type="button" data-dismiss="modal">close</i>
               <i class="material-icons btn-color" id="select-color" type="button">format_paint</i>
               <i class="material-icons btn-done" type="button">done</i>
             </div>
@@ -45,18 +43,15 @@
           <h3 class="logo">Write.</h3>
           <i class = "sub-logo">A place for anonymous notes</i>
       </div>
-
-      <div class="addNote container">
-        <div class="dropdown" type="button">
-          <div class="material-icons addButton" id="add-button" type="button">add</div>
-          <div class="colors closed" type="button">
-            <div class="color-dropdown">
-            <button class="color-select color-select-0 red" id="red" type="button" data-toggle="modal" data-target="#modal-box"></button>
-            <button class="color-select color-select-1 blue " id="blue" type="button" data-toggle="modal" data-target="#modal-box"></button>
-            <button class="color-select color-select-2 orange " id="orange" type="button" data-toggle="modal" data-target="#modal-box"></button>
-            <button class="color-select color-select-3 green " id="green" type="button" data-toggle="modal" data-target="#modal-box"></button>
-            <button class="color-select color-select-4 purple " id="purple" type="button" data-toggle="modal" data-target="#modal-box"></button>
-          </div>
+      <div class="dropdown" type="button">
+        <div class="material-icons addButton" id="add-button" type="button">add</div>
+        <div class="colors closed" type="button">
+          <div class="color-dropdown">
+          <button class="color-select color-select-0 red" id="red" type="button" data-toggle="modal" data-target="#modal-box"></button>
+          <button class="color-select color-select-1 blue" id="blue" type="button" data-toggle="modal" data-target="#modal-box"></button>
+          <button class="color-select color-select-2 orange" id="orange" type="button" data-toggle="modal" data-target="#modal-box"></button>
+          <button class="color-select color-select-3 green" id="green" type="button" data-toggle="modal" data-target="#modal-box"></button>
+          <button class="color-select color-select-4 purple" id="purple" type="button" data-toggle="modal" data-target="#modal-box"></button>
         </div>
       </div>
       
@@ -69,34 +64,34 @@
     </div>
 
       <div class="row notes-content container">
-          <div class="note col-xs-8 col-md-3 col-xl-6">
+          <div class="note col-xs-8 col-md-3 col-xl-6" id="note-1">
               <h3 class="note-title">Note Title</h3>
               <p class="note-content"> Here goes the content.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
-              <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+              <p class="note-date"> 12 June 2021 <span class="note-icons"><i class="material-icons" type="button">create</i><i class="material-icons" type="button">delete_forever</i></span></p>
           </div>
 
-          <div class="note col-xs-8 col-md-3 col-xl-6">
+          <div class="note col-xs-8 col-md-3 col-xl-6" id="note-2">
             <h3 class="note-title">Note Title</h3>
             <p class="note-content"> Here goes the content.. gihgghughughughughrgughughughrughughrguhgruhgrgh.</p>
-            <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+            <p class="note-date"> 12 June 2021 <span class="note-icons"><i class="material-icons" type="button">create</i><i class="material-icons" type="button">delete_forever</i></span></p>
         </div>
 
-        <div class="note col-xs-8 col-md-3 col-xl-6">
+        <div class="note col-xs-8 col-md-3 col-xl-6" id="note-3">
           <h3 class="note-title">Note Title</h3>
           <p class="note-content"> Here goes the content.. gihgghughughughughrgughughughrughughrguhgruhgrgh.</p>
-          <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+          <p class="note-date"> 12 June 2021 <span class="note-icons"><i class="material-icons" type="button">create</i><i class="material-icons" type="button">delete_forever</i></span></p>
         </div>
 
-        <div class="note col-xs-8 col-md-3 col-xl-6">
+        <div class="note col-xs-8 col-md-3 col-xl-6" id="note-4">
           <h3 class="note-title">Note Title</h3>
           <p class="note-content"> Here goes the content.. gihgghughughughughrgughughughrughughrguhgruhgrgh.</p>
-          <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+          <p class="note-date"> 12 June 2021 <span class="note-icons"><i class="material-icons" type="button">create</i><i class="material-icons" type="button">delete_forever</i></span></p>
         </div>
 
-        <div class="note col-xs-8 col-md-3 col-xl-6">
+        <div class="note col-xs-8 col-md-3 col-xl-6" id="note-5">
           <h3 class="note-title">Note Title</h3>
           <p class="note-content"> Here goes the content.. gihgghughughughughrgughughughrughughrguhgruhgrgh.</p>
-          <p class="note-date"> 12 June 2021 <i class="material-icons" type="button">create</i> </p>
+          <p class="note-date"> 12 June 2021 <span class="note-icons"><i class="material-icons" type="button">create</i><i class="material-icons" type="button">delete_forever</i></span></p>
         </div>
         
       </div>

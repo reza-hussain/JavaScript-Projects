@@ -6,6 +6,7 @@
   --myred: #fb9c75;
   --mypurple: #b797f5;
   --mygreen: #e4ed92;
+  --mywhite: #fafafa;
 }
 
 * {
@@ -24,6 +25,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
+  background-color: var(--mywhite);
 }
 
 button {
@@ -37,10 +39,20 @@ input {
   background-color: inherit;
 }
 
+i {
+  margin: 0;
+  padding: 2px;
+}
+
 textarea {
   outline: none;
   resize: none;
   border: none;
+  background-color: inherit;
+}
+
+span:focus {
+  outline: none;
 }
 
 .container {
@@ -55,19 +67,23 @@ textarea {
 /*---------------------Modal Region--------------------------*/
 .modal {
   position: fixed;
-  display: block;
+  margin: 0 auto;
 }
 
 .modal-header {
-  padding: 20px;
+  padding: 14px;
   border: none;
+  display: inline-block;
+  font-weight: 500;
   filter: drop-shadow(0px 0.5px 5px rgba(16, 16, 16, 0.1));
   background-color: var(--myred);
-  z-index: 1;
+  word-wrap: break-word;
+  font-size: 30px;
 }
 
-.modal-header > h2 {
-  font-weight: 500;
+.modal-header:empty::before {
+  content: "Think of a Good Title";
+  color: #6e6d6d;
 }
 
 .modal .modal-body {
@@ -76,6 +92,12 @@ textarea {
   padding: 20px;
   border: none;
 }
+
+.modal-body textarea {
+  width: 85vw;
+  height: 60vh;
+}
+
 .modal-bottom {
   width: 60vw;
   height: 8vh;
@@ -100,19 +122,27 @@ textarea {
   transition: all 0.4s linear;
 }
 
-.color-buttons-modal {
+#modal-color-picker {
   width: inherit;
   height: inherit;
   display: none;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  border-radius: 50px 50px 50px 50px;
   opacity: 1;
   z-index: 1;
-  transition: all 0.4s linear;
+  border: 5px solid var(--myred);
 }
-.color-buttons-modal button {
+
+.select-color {
   margin: 0 15px;
+}
+
+.color-buttons {
+  display: block;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .hidden {
@@ -142,58 +172,98 @@ textarea {
   border-radius: 30px;
   outline: none;
   border: none;
-  background-color: #f7f8f2;
+  background-color: #eaebe9;
   padding: 10px;
 }
 /*---------------------Add Button Region--------------------------*/
-
+.addButton {
+  width: 40px;
+  height: 40px;
+  background-color: #101010;
+  color: #fafafa;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
 .addNote {
   display: block;
   text-align: center;
   margin: 0 auto;
 }
-
-#red {
+.dropdown {
+  display: block;
+  margin: 0 auto;
+  height: 80px;
+  margin-bottom: 18px;
+}
+.color-select {
+  margin: 5px 9px;
+}
+.colors {
+  overflow-y: hidden;
+  max-height: 500px;
+  transition-property: all;
+  transition-duration: 0.6s;
+}
+.color-dropdown {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  width: 50vw;
+  height: 8vw;
+  margin: 0 auto;
+  background-color: #fafafa;
+}
+.color-select {
   width: 20px;
   height: 20px;
   border-radius: 50px;
-  background-color: var(--myred);
-  margin-top: 10px;
   transition: all 0.5s ease-in linear;
+}
+.closed {
+  max-height: 0;
+}
+
+#red {
+  background-color: var(--myred);
+  border: 1px solid inherit;
 }
 
 #blue {
-  width: 20px;
-  height: 20px;
-  border-radius: 50px;
   background-color: var(--myblue);
-  transition: all 0.5s ease-in linear;
 }
 
 #green {
-  width: 20px;
-  height: 20px;
-  border-radius: 50px;
   background-color: var(--mygreen);
-  transition: all 0.5s ease-in linear;
 }
 
 #orange {
-  width: 20px;
-  height: 20px;
-  border-radius: 50px;
   background-color: var(--myorange);
-  transition: all 0.5s ease-in linear;
 }
 
 #purple {
-  width: 20px;
-  height: 20px;
-  border-radius: 50px;
   background-color: var(--mypurple);
-  transition: all 0.5s ease-in linear;
 }
 
+button.color-select {
+  border: 1px solid inherit;
+}
+
+button.color-select:hover {
+  animation: spin 2s linear infinite;
+  border: 1.9px dashed #fafafa;
+  box-shadow: 0 0 0 2px #fafafa inset;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
 /*---------------------Notes Region--------------------------*/
 .notes-content {
   display: flex;
@@ -249,11 +319,19 @@ footer {
 ---------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------*/
 
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
+  /*Modal*/
+  .modal-body textarea {
+    width: 56vw;
+  }
   .modal .modal-body {
     height: 70vh;
   }
 
+  .modal-bottom {
+    width: 40vw;
+  }
+  /*Header*/
   .header {
     text-align: left;
     width: 100vw;
@@ -271,35 +349,44 @@ footer {
     margin: 0;
   }
 
+  /*Add Button Content*/
+  .addButton {
+    padding: 0;
+    margin: 0;
+  }
+
+  .dropdown {
+    margin-bottom: 30px;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    width: 50vw;
+  }
+
+  .colors {
+    overflow-x: hidden;
+    max-height: 70px;
+    max-width: 300px;
+  }
+  .color-dropdown {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    width: 30vw;
+    margin: 0 auto;
+    background-color: #fafafa;
+  }
+
+  .closed {
+    max-width: 0;
+  }
+  /*Notes Content*/
+
   .notes-content {
     min-height: auto;
-  }
-
-  .addNote {
     display: flex;
-    text-align: left;
-    align-items: center;
-    padding: 0;
-    padding: 0 3%;
-  }
-
-  .addButton {
-    width: 40px;
-    height: 40px;
-    background-color: #101010;
-    color: #fafafa;
-    border-radius: 40px;
-    margin: 0 0 0 0;
-  }
-
-  .color-buttons {
-    margin: 0;
-    margin-left: 4px;
-  }
-
-  .notes-content {
-    display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin: 0 auto;
     padding: 0 3%;
   }
@@ -309,15 +396,21 @@ footer {
     height: auto;
     word-wrap: break-word;
     background-color: var(--myorange);
-    padding: 5%;
+    padding: 5% 3% 5% 3%;
     border-radius: 10px;
-    margin: 5% 0 0 0;
+    margin: 5% 2% 2% 0%;
     margin-bottom: 20px;
   }
 
   .note-content {
     overflow: hidden;
     height: 50px;
+  }
+
+  .note-date {
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-between;
   }
 
   .note-date {
@@ -334,22 +427,13 @@ footer {
 -------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width: 1000px) {
-  .modal .modal-body {
-    height: 70vh;
+  .modal-body textarea {
+    width: 33vw;
   }
   .modal-bottom {
-    width: 20vw;
+    width: 30vw;
   }
-
-  #modal-color-picker {
-    flex-direction: row;
-  }
-  .color-buttons-modal button {
-    margin: 0 15px;
-  }
-
   /*-------------HEADER REGION----------*/
-
   .header_and_add {
     flex-direction: column-reverse;
   }
@@ -370,70 +454,47 @@ footer {
     margin: 0;
   }
 
-  .notes-content {
-    min-height: auto;
+  /*Add Button Content*/
+  #add-note {
+    border: 1px solid red;
   }
-
-  .addNote {
-    padding: 0;
+  .dropdown {
+    display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    margin-top: 15vh;
     height: 100%;
     width: 100px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    overflow-x: hidden;
+    overflow-y: hidden;
   }
-
-  .dropdown {
-    display: block;
-    margin: 0 auto;
-    width: 50px;
-    height: 300px;
-    margin-top: 80px;
-  }
-
-  .addButton {
-    width: 40px;
-    height: 40px;
-    background-color: inherit;
-    background-color: #101010;
-    color: #fafafa;
-    border-radius: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
-  .color-buttons {
-    display: block;
-    margin: 0 auto;
-    justify-content: center;
-  }
-
   .color-select {
-    margin: 5px 9px;
+    margin: 5px 4px;
   }
-
   .colors {
     overflow-y: hidden;
     max-height: 500px;
-    transition-property: all;
-    transition-duration: 0.6s;
+    max-width: 50px;
+    margin: 0 auto;
   }
-
   .color-dropdown {
     display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
+    width: 50px;
+    height: 25vh;
     margin: 0 auto;
     background-color: #fafafa;
   }
-
   .closed {
     max-height: 0;
   }
+
+  /*Notes Content*/
 
   .notes-content {
     display: flex;
@@ -441,6 +502,7 @@ footer {
     margin: 0 auto;
     padding: 0;
     gap: 20px;
+    min-height: auto;
   }
 
   .note {
