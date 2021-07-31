@@ -428,7 +428,7 @@ footer {
 
 @media screen and (min-width: 1000px) {
   .modal-body textarea {
-    width: 33vw;
+    width: 30vw;
   }
   .modal-bottom {
     width: 30vw;
